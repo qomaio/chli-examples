@@ -38,6 +38,6 @@ int main(int argc, char **argv) {
 	gettimeofday(&end,NULL);
 	long ds = (end.tv_sec - start.tv_sec);
 	double seconds =  ( ((ds * 1000000) + end.tv_usec) - (start.tv_usec) ) / 1000000.0;
-	printf("Time elpased is %.3lf seconds\n", seconds);
+	printf("Time elpased is %.6lf seconds\n", seconds);
 	return 0;
 }
