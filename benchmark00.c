@@ -19,16 +19,16 @@ int main(int argc, char **argv) {
 
 	valary = malloc( sizeof(valary[0])*NOBS);
 
-	printf("%s\n",__FILE__);
+	//printf("%s\n",__FILE__);
 	struct timeval start;
 	gettimeofday(&start,NULL);
 
 	fm(cfmini(&status));
 	fm(cfmver(&status, &ver));
-	printf("FAME CHLI %.5f\n",ver);
+	//printf("FAME CHLI %.5f\n",ver);
 	fm(cfmopdb(&status, &dbkey, dbname, HOMODE));
 	for (i = 0; i < NSERIES; i++) {
-		sprintf(objnam,"s%06d",i);
+		// sprintf(objnam,"s%06d",i);
 		fm(cfmnwob(&status, dbkey, objnam, HSERIE, HCASEX, HPRECN, HBSUND, HOBUND));
 		fm(cfmwrng(&status, dbkey, objnam, range, valary, HNTMIS, NULL));
 	}
